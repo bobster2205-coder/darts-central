@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darts Central | The Home of Darts</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #080b08;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  padding: 28px 7%;
+  border-bottom: 1px solid #263b19;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: #aaff00;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.logo span { color: white; }
+.tagline { color: #999; font-size: 12px; }
+nav {
+  display: flex;
+  gap: 25px;
+  padding: 18px 7%;
+  overflow-x: auto;
+  border-bottom: 1px solid #263b19;
+}
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+nav a:hover { color: #aaff00; }
+.hero {
+  padding: 85px 7%;
+  background: linear-gradient(90deg,#080b08,#172510);
+}
+.hero h1 {
+  font-size: clamp(38px,6vw,65px);
+  margin: 0 0 15px;
+}
+.green { color: #aaff00; }
+.hero p { color: #aaa; font-size: 18px; }
+.button {
+  display: inline-block;
+  background: #aaff00;
+  color: #080b08;
+  padding: 13px 22px;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section { padding: 45px 7%; }
+h2 {
+  color: #aaff00;
+  border-bottom: 1px solid #304b20;
+  padding-bottom: 12px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 18px;
+}
+.card {
+  background: #141a12;
+  border: 1px solid #293b20;
+  border-radius: 9px;
+  padding: 22px;
+}
+.card h3 { color: #aaff00; }
+.card p { color: #aaa; line-height: 1.6; }
+table { width: 100%; border-collapse: collapse; }
+td, th {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #293b20;
+}
+th { color: #aaff00; }
+footer {
+  text-align: center;
+  padding: 35px;
+  color: #888;
+  border-top: 1px solid #263b19;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">DARTS <span>CENTRAL</span></div>
+    <div class="tagline">THE HOME OF DARTS NEWS & STATISTICS</div>
+  </div>
+</header>
+
+<nav>
+  <a href="#rankings">RANKINGS</a>
+  <a href="#power">POWER SCORE</a>
+  <a href="#news">NEWS</a>
+  <a href="#articles">ARTICLES</a>
+  <a href="#calendar">CALENDAR</a>
+  <a href="#statistics">STATISTICS</a>
+</nav>
+
+<div class="hero">
+  <h1>MORE THAN JUST <span class="green">DARTS.</span></h1>
+  <p>Breaking news. Incredible statistics. In-depth analysis.<br>
+  Everything happening in the world of professional darts.</p>
+  <a class="button" href="#news">EXPLORE THE LATEST</a>
+</div>
+
+<section id="rankings">
+  <h2>WORLD RANKINGS</h2>
+  <p>Follow the biggest names in professional darts.</p>
+  <div class="card">
+    Rankings will feature player positions, prize money and ranking changes.
+  </div>
+</section>
+
+<section id="power">
+  <h2>POWER SCORE</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>SCORING POWER</h3>
+      <p>Measure scoring averages and maximum scoring.</p>
+    </div>
+    <div class="card">
+      <h3>FINISHING ABILITY</h3>
+      <p>Compare checkout percentages and big finishes.</p>
+    </div>
+    <div class="card">
+      <h3>RECENT FORM</h3>
+      <p>Track performances and consistency over time.</p>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <h2>LATEST DARTS NEWS</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>BREAKING NEWS</h3>
+      <p>Latest announcements and stories from the world of darts.</p>
+    </div>
+    <div class="card">
+      <h3>TOURNAMENT UPDATES</h3>
+      <p>Follow major competitions and important results.</p>
+    </div>
+    <div class="card">
+      <h3>PLAYER NEWS</h3>
+      <p>Updates, interviews and stories about your favourite players.</p>
+    </div>
+  </div>
+</section>
+
+<section id="articles">
+  <h2>FEATURED ARTICLES</h2>
+  <div class="card">
+    <h3>THE ANALYSIS ROOM</h3>
+    <p>In-depth match analysis, opinions, player features and expert breakdowns.</p>
+  </div>
+</section>
+
+<section id="calendar">
+  <h2>TOURNAMENT CALENDAR</h2>
+  <div class="card">
+    <p>Upcoming fixtures, tournament dates, draws and results.</p>
+    <p>Full tournament coverage coming soon.</p>
+  </div>
+</section>
+
+<section id="statistics">
+  <h2>PLAYER STATISTICS</h2>
+  <table>
+    <tr><th>STATISTIC</th><th>WHAT IT MEASURES</th></tr>
+    <tr><td>Three-dart average</td><td>Scoring performance</td></tr>
+    <tr><td>180s</td><td>Maximum scores</td></tr>
+    <tr><td>Checkout %</td><td>Finishing ability</td></tr>
+    <tr><td>Highest checkout</td><td>Biggest finish</td></tr>
+  </table>
+</section>
+
+<footer>
+  <div class="logo">DARTS CENTRAL</div>
+  <p>News. Numbers. Analysis. Darts.</p>
+  <p>Independent darts media project.</p>
+</footer>
+
+</body>
+</html>
