@@ -5,14 +5,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Darts Central | The Home of Darts</title>
+
 <style>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   background: #080b08;
   color: white;
   font-family: Arial, sans-serif;
 }
+
 header {
   padding: 28px 7%;
   border-bottom: 1px solid #263b19;
@@ -20,14 +23,17 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   color: #aaff00;
   font-size: 30px;
   font-weight: 900;
   letter-spacing: 2px;
 }
+
 .logo span { color: white; }
 .tagline { color: #999; font-size: 12px; }
+
 nav {
   display: flex;
   gap: 25px;
@@ -35,23 +41,33 @@ nav {
   overflow-x: auto;
   border-bottom: 1px solid #263b19;
 }
+
 nav a {
   color: #ddd;
   text-decoration: none;
   font-weight: bold;
   white-space: nowrap;
 }
+
 nav a:hover { color: #aaff00; }
+
 .hero {
   padding: 85px 7%;
   background: linear-gradient(90deg,#080b08,#172510);
 }
+
 .hero h1 {
   font-size: clamp(38px,6vw,65px);
   margin: 0 0 15px;
 }
+
 .green { color: #aaff00; }
-.hero p { color: #aaa; font-size: 18px; }
+
+.hero p {
+  color: #aaa;
+  font-size: 18px;
+}
+
 .button {
   display: inline-block;
   background: #aaff00;
@@ -62,32 +78,80 @@ nav a:hover { color: #aaff00; }
   text-decoration: none;
   font-weight: bold;
 }
+
 section { padding: 45px 7%; }
+
 h2 {
   color: #aaff00;
   border-bottom: 1px solid #304b20;
   padding-bottom: 12px;
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
   gap: 18px;
 }
+
 .card {
   background: #141a12;
   border: 1px solid #293b20;
   border-radius: 9px;
   padding: 22px;
 }
+
 .card h3 { color: #aaff00; }
-.card p { color: #aaa; line-height: 1.6; }
-table { width: 100%; border-collapse: collapse; }
+
+.card p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px;
+}
+
 td, th {
   padding: 14px;
   text-align: left;
   border-bottom: 1px solid #293b20;
 }
+
 th { color: #aaff00; }
+
+tbody tr:hover { background: #172510; }
+
+.rank-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.rank-controls input,
+.rank-controls select {
+  padding: 14px;
+  background: #141a12;
+  color: white;
+  border: 1px solid #aaff00;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.rank-controls input {
+  width: 100%;
+  max-width: 400px;
+}
+
+.rank-controls select { cursor: pointer; }
+
+.rank-number {
+  color: #aaff00;
+  font-weight: bold;
+}
+
 footer {
   text-align: center;
   padding: 35px;
@@ -96,6 +160,7 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -116,30 +181,73 @@ footer {
 
 <div class="hero">
   <h1>MORE THAN JUST <span class="green">DARTS.</span></h1>
-  <p>Breaking news. Incredible statistics. In-depth analysis.<br>
-  Everything happening in the world of professional darts.</p>
+  <p>
+    Breaking news. Incredible statistics. In-depth analysis.<br>
+    Everything happening in the world of professional darts.
+  </p>
   <a class="button" href="#news">EXPLORE THE LATEST</a>
 </div>
 
+<!-- WORLD RANKINGS -->
+
 <section id="rankings">
   <h2>WORLD RANKINGS</h2>
-  <p>Follow the biggest names in professional darts.</p>
-  <div class="card">
-    Rankings will feature player positions, prize money and ranking changes.
+
+  <p style="color:#aaa">
+    PDC ORDER OF MERIT • SAMPLE DATA
+  </p>
+
+  <div class="rank-controls">
+    <input
+      id="playerSearch"
+      type="text"
+      placeholder="Search for a player..."
+    >
+
+    <select id="rankSort">
+      <option value="rank">Sort by world ranking</option>
+      <option value="money">Sort by prize money</option>
+      <option value="name">Sort by player name</option>
+    </select>
   </div>
+
+  <div style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>RANK</th>
+          <th>PLAYER</th>
+          <th>MOVEMENT</th>
+          <th>PRIZE MONEY</th>
+        </tr>
+      </thead>
+
+      <tbody id="rankTable"></tbody>
+    </table>
+  </div>
+
+  <p style="color:#888;font-size:12px;margin-top:15px">
+    Sample figures for demonstration only. Not verified live PDC rankings.
+    Prize money is not the same as a player's Power Score.
+  </p>
 </section>
+
+<!-- POWER SCORE -->
 
 <section id="power">
   <h2>POWER SCORE</h2>
+
   <div class="cards">
     <div class="card">
       <h3>SCORING POWER</h3>
       <p>Measure scoring averages and maximum scoring.</p>
     </div>
+
     <div class="card">
       <h3>FINISHING ABILITY</h3>
       <p>Compare checkout percentages and big finishes.</p>
     </div>
+
     <div class="card">
       <h3>RECENT FORM</h3>
       <p>Track performances and consistency over time.</p>
@@ -147,17 +255,22 @@ footer {
   </div>
 </section>
 
+<!-- NEWS -->
+
 <section id="news">
   <h2>LATEST DARTS NEWS</h2>
+
   <div class="cards">
     <div class="card">
       <h3>BREAKING NEWS</h3>
       <p>Latest announcements and stories from the world of darts.</p>
     </div>
+
     <div class="card">
       <h3>TOURNAMENT UPDATES</h3>
       <p>Follow major competitions and important results.</p>
     </div>
+
     <div class="card">
       <h3>PLAYER NEWS</h3>
       <p>Updates, interviews and stories about your favourite players.</p>
@@ -165,31 +278,60 @@ footer {
   </div>
 </section>
 
+<!-- ARTICLES -->
+
 <section id="articles">
   <h2>FEATURED ARTICLES</h2>
+
   <div class="card">
     <h3>THE ANALYSIS ROOM</h3>
-    <p>In-depth match analysis, opinions, player features and expert breakdowns.</p>
+    <p>
+      In-depth match analysis, opinions, player features
+      and expert breakdowns.
+    </p>
   </div>
 </section>
 
+<!-- CALENDAR -->
+
 <section id="calendar">
   <h2>TOURNAMENT CALENDAR</h2>
+
   <div class="card">
     <p>Upcoming fixtures, tournament dates, draws and results.</p>
     <p>Full tournament coverage coming soon.</p>
   </div>
 </section>
 
+<!-- STATISTICS -->
+
 <section id="statistics">
   <h2>PLAYER STATISTICS</h2>
-  <table>
-    <tr><th>STATISTIC</th><th>WHAT IT MEASURES</th></tr>
-    <tr><td>Three-dart average</td><td>Scoring performance</td></tr>
-    <tr><td>180s</td><td>Maximum scores</td></tr>
-    <tr><td>Checkout %</td><td>Finishing ability</td></tr>
-    <tr><td>Highest checkout</td><td>Biggest finish</td></tr>
-  </table>
+
+  <div style="overflow-x:auto">
+    <table>
+      <tr>
+        <th>STATISTIC</th>
+        <th>WHAT IT MEASURES</th>
+      </tr>
+      <tr>
+        <td>Three-dart average</td>
+        <td>Scoring performance</td>
+      </tr>
+      <tr>
+        <td>180s</td>
+        <td>Maximum scores</td>
+      </tr>
+      <tr>
+        <td>Checkout %</td>
+        <td>Finishing ability</td>
+      </tr>
+      <tr>
+        <td>Highest checkout</td>
+        <td>Biggest finish</td>
+      </tr>
+    </table>
+  </div>
 </section>
 
 <footer>
@@ -197,6 +339,58 @@ footer {
   <p>News. Numbers. Analysis. Darts.</p>
   <p>Independent darts media project.</p>
 </footer>
+
+<!-- RANKINGS SEARCH AND SORTING -->
+
+<script>
+const players = [
+  {rank:1,name:"Luke Littler",movement:"—",money:3141000},
+  {rank:2,name:"Luke Humphries",movement:"▲ 1",money:1062500},
+  {rank:3,name:"Gian van Veen",movement:"▼ 1",money:1058750},
+  {rank:4,name:"Gerwyn Price",movement:"—",money:833500},
+  {rank:5,name:"Jonny Clayton",movement:"—",money:717250},
+  {rank:6,name:"Ross Smith",movement:"—",money:715250},
+  {rank:7,name:"James Wade",movement:"—",money:672750},
+  {rank:8,name:"Josh Rock",movement:"—",money:603750},
+  {rank:9,name:"Stephen Bunting",movement:"▲ 1",money:598000},
+  {rank:10,name:"Danny Noppert",movement:"▲ 1",money:595750}
+];
+
+const table = document.getElementById("rankTable");
+const search = document.getElementById("playerSearch");
+const sort = document.getElementById("rankSort");
+
+function displayRankings() {
+  let list = players.filter(player =>
+    player.name.toLowerCase().includes(search.value.toLowerCase())
+  );
+
+  if (sort.value === "money") {
+    list.sort((a,b) => b.money - a.money);
+  } else if (sort.value === "name") {
+    list.sort((a,b) => a.name.localeCompare(b.name));
+  } else {
+    list.sort((a,b) => a.rank - b.rank);
+  }
+
+  table.innerHTML = list.map(player => `
+    <tr>
+      <td class="rank-number">${player.rank}</td>
+      <td><strong>${player.name}</strong></td>
+      <td style="color:${
+        player.movement.includes("▲") ? "#aaff00" :
+        player.movement.includes("▼") ? "#ff7777" : "#aaa"
+      }">${player.movement}</td>
+      <td>£${player.money.toLocaleString("en-GB")}</td>
+    </tr>
+  `).join("");
+}
+
+search.addEventListener("input",displayRankings);
+sort.addEventListener("change",displayRankings);
+
+displayRankings();
+</script>
 
 </body>
 </html>
